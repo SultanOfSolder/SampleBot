@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  * directory.
  */
 public class Robot extends IterativeRobot {
-	RobotDrive myRobot;
+	RobotDrive tanktreads;
 	Joystick stick;
 	int autoLoopCounter;
 	
@@ -22,7 +22,7 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-    	myRobot = new RobotDrive(0,1);
+    	tanktreads = new RobotDrive(0,1);
     	stick = new Joystick(0);
     }
     
@@ -39,10 +39,10 @@ public class Robot extends IterativeRobot {
     public void autonomousPeriodic() {
     	if(autoLoopCounter < 100) //Check if we've completed 100 loops (approximately 2 seconds)
 		{
-			myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
+    		tanktreads.drive(-0.5, 0.0); 	// drive forwards half speed
 			autoLoopCounter++;
 			} else {
-			myRobot.drive(0.0, 0.0); 	// stop robot
+			tanktreads.drive(0.0, 0.0); 	// stop robot
 		}
     }
     
@@ -56,7 +56,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        myRobot.arcadeDrive(stick);
+    	tanktreads.arcadeDrive(stick);
     }
     
     /**
