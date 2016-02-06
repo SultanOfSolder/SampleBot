@@ -16,6 +16,7 @@ public class Robot extends IterativeRobot {
 	RobotDrive tanktreads;
 	Joystick joyL;
 	Joystick joyR;
+	Joystick throttle;
 	int autoLoopCounter;
 	
     /**
@@ -26,6 +27,7 @@ public class Robot extends IterativeRobot {
     	tanktreads = new RobotDrive(0,1);
     	joyL = new Joystick(0);
     	joyR = new Joystick(1);
+    	throttle = new Joystick(2);
     }
     
     /**
